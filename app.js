@@ -2,6 +2,7 @@ const express=require('express')
 const app=express();
 const inquirer = require("inquirer");
 const validation = require("./util/validationTime");
+const phase_1 = require("./util/phase1");
 inquirer
   .prompt([
     {
@@ -14,17 +15,18 @@ inquirer
       type: "input",
       name: "time",
       message: "Enter time (HH:MM AM/PM): ",
-    },
+    }
   ])
   .then((answer) => {
     let Week_Day = answer.weekday
     let Day_Time = answer.time;
+    console.log(Week_Day,Day_Time);
 
     if (!validation(Day_Time)) {
       throw new Error("PLease Enter Valid Time");
     }
-    const Check_Shop=
-    console.log(ConvertedTime);
+    const Check_Shop=phase_1(Week_Day,Day_Time)
+    console.log(Check_Shop);
   })
   .catch((err) => {
     console.log(err);
