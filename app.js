@@ -24,8 +24,8 @@ inquirer
     if (!validation(Day_Time)) {
       throw new Error("PLease Enter Valid Time");
     }
-    const Check_Shop=
-    console.log(ConvertedTime);
+    const Check_Shop=phase_3(Week_Day,Day_Time)
+    console.log(Check_Shop);
   })
   .catch((err) => {
     console.log(err);
