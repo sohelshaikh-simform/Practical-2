@@ -9,7 +9,7 @@ inquirer
       type: "list",
       name: "weekday",
       message: "Choose Day you want to Search :",
-      choices:['Mon','Tue','Wed',"Thu","Fri","Sat"]
+      choices:['Mon','Tue','Wed',"Thu","Fri","Sat","Sun"]
     },
     {
       type: "input",
