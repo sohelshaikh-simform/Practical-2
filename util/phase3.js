@@ -43,7 +43,7 @@ const openCloseTime = (Week_Day, Day_Time) => {
     let days = parseInt(hour / 24);
     let remain_hours = hour - days * 24;
     return (
-      `Shop will open after${ days==0? "":" "+days}${days==1?" day ":" "}${remain_hours} hour and ${minute} minutes 😢`
+      `Shop will open after${ days==0? "":" "+days}${days==1|days==2?" day ":" "}${remain_hours} hour and ${minute} minutes 😢`
         );
   } 
 //  If Shop is Open
@@ -65,17 +65,18 @@ let week_days = [
   "Fri",
   "Sat",
   "Sun",
-  "Mon"
 ];
 const next_day = (inday) => {
-    const index=week_days.findIndex((day)=>day===inday)
+    let index=week_days.findIndex((day)=>day===inday)
     console.log(index);
     let i;
     let status;
+
     for(i=1;i<8;i++){
         status=shop_data.find((obj)=>{
-          console.log(obj.day,week_days[index+i]);
-          return obj.day===week_days[index+i]})
+          console.log(obj.day,week_days[(index+i)%7],index,i);
+          return obj.day===(week_days[(index+i)%7])
+        })
         console.log(status,"status");
         if(status){
             break;
