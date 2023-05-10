@@ -20,7 +20,7 @@ const openCloseTime = (Week_Day, Day_Time) => {
   if (!Find_day) {
     const next_open=next_day(Week_Day)
     const [minute,hour,days,remaining_hours]=calculation(next_open,check_Time)
-    return (`Shop will open after${ days==0? "":" "+days}${days==1?" day ":""}${remaining_hours} hour and ${minute} minutes 😢`);
+    return (`Shop will open after ${ days==0? "":days+" days "}${remaining_hours} hour and ${minute} minutes 😢`);
   }
 
   const open_Time = new Date(`01/01/2001 ${Find_day.open}`);
@@ -36,7 +36,7 @@ const openCloseTime = (Week_Day, Day_Time) => {
   else if (check_Time >= close_Time) {
     const next_open=next_day(Week_Day)
     const [minute,hour,days,remaining_hours]=calculation(next_open,check_Time)
-    return (`Shop will open after${ days==0? "":" "+days}${days==1|days==2?" day ":" "}${remaining_hours} hour and ${minute} minutes 😢`);
+    return (`Shop will open after ${ days==0? "":days+" days "}${remaining_hours} hour and ${minute} minutes 😢`);
   } 
 
 //  If Shop is Open
@@ -57,7 +57,7 @@ const next_day = (inday) => {
           // console.log(obj.day,week_days[(index+i)%7],index,i);
           return obj.day===(week_days[(index+i)%7])
         })
-        count++;
+        count++;``
         if(status){
             break;
         }
