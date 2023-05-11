@@ -47,6 +47,7 @@ const openCloseTime = (Week_Day, Day_Time) => {
 };
 
 let week_days = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+//  next_day calculation.
 const next_day = (inday) => {
     let index=week_days.findIndex((day)=>day===inday)
     let count=1;
@@ -57,7 +58,7 @@ const next_day = (inday) => {
           // console.log(obj.day,week_days[(index+i)%7],index,i);
           return obj.day===(week_days[(index+i)%7])
         })
-        count++;``
+        count++;
         if(status){
             break;
         }

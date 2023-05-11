@@ -3,6 +3,7 @@ const app=express();
 const inquirer = require("inquirer");
 const validation = require("./util/validationTime");
 const phase_3=require('./util/phase3')
+const moment=require('moment')
 inquirer
   .prompt([
     {
@@ -15,6 +16,7 @@ inquirer
       type: "input",
       name: "time",
       message: "Enter time (HH:MM AM/PM): ",
+      default:moment().format('LT')
     },
   ])
   .then((answer) => {
