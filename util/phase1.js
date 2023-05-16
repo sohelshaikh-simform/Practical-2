@@ -4,9 +4,10 @@ const shop_data=data['CONST SHOP_SCHEDULE']
 const openClose=(Week_Day,Day_Time)=>{
  
     const Find_day=shop_data.find((obj)=>obj.day == Week_Day);
-
+    
+    // if day is not in Schedule
     if(!Find_day){
-        return " Day is not Available";
+        return " Day is not in Schedule";
     }
 
     const check_Time=new Date(`01/01/1999 ${Day_Time}`)

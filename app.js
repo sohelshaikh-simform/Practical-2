@@ -21,10 +21,13 @@ inquirer
     let Week_Day = answer.weekday
     let Day_Time = answer.time;
     console.log(Week_Day,Day_Time);
-
+    
+    // validate user enter Time.
     if (!validation(Day_Time)) {
       throw new Error("PLease Enter Valid Time");
     }
+
+    // If Time is valid call phase_1 fucntion.
     const Check_Shop=phase_1(Week_Day,Day_Time)
     console.log(Check_Shop);
   })
