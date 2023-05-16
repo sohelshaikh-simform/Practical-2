@@ -9,9 +9,12 @@ const openCloseTime = (Week_Day, Day_Time) => {
   // Calculate Hour and Minutes
   const calculation=(a,b)=>{
     const totalmilis =  a.getTime()- b.getTime();
+    // calculate remaining minut.
     const minute = Math.floor(totalmilis / (60 * 1000)) % 60;
     const hour = Math.floor(totalmilis / (60 * 60 * 1000));
+    // calculate number of days are remain to open shop.
     let days = parseInt(hour / 24);
+    // calculate reamaining hour left.
     let remaining_hours = hour - days * 24;
     return [minute, hour,days,remaining_hours]
   }

@@ -22,7 +22,8 @@ inquirer
   .then((answer) => {
     let Week_Day = answer.weekday
     let Day_Time = answer.time;
-
+    
+    // validate user enter Time
     if (!validation(Day_Time)) {
       throw new Error("PLease Enter Valid Time");
     }
